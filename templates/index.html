@@ -1,0 +1,104 @@
+{% extends 'base.html'%}
+{% block title %}Home - Fraud Detection{% endblock %}
+{% block x %}
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container mb-4">
+      <div class="row align-items-center" >
+        
+        <!-- Text -->
+        <div class="col-md-6 hero-text mb-4">
+          <h1 class="display-5 fw-bold">Fraud detection ?</h1>
+          <p class="lead text-muted">Fraud detection is the process of identifying suspicious activity that indicates criminal 
+            theft of money, data or resources might be underway. It is commonly performed by fraud detection software that 
+            monitors transactions, applications, APIs and user behavior.</p>
+          <br>
+          <center>
+          <a href=".\fraud-detection" class="btn btn-primary btn-lg">Fraud Detection </a>
+          </center>
+        </div>
+        
+        <!-- Image -->
+         
+        <div class="col-md-6 text-center">
+          <img src="{{ url_for('static', filename='images/slide.avif') }}" alt="Loan illustration">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+   <!-- How It Works -->
+    <div class="row">
+    <section class="bg-light py-5 mt-4">
+        <div class="container">
+            <h1 class="text-center mb-3"><b>Applications of fraud detection</b></h1>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                  <center>
+                    <img src="{{ url_for('static', filename='images/bank-fraud.jpg') }}" class="img-fluid rounded mb-3 img-height" alt="Data Collection">
+                    <h5 class="mb-2"><b>Banking and Finance</b></h5>
+                    <p>Identification of fraudulent transactions, including credit card fraud and money laundering.
+                      Detection of unauthorized access to accounts or identity theft.
+                      Monitoring of loan applications to prevent fraudulent submissions.
+                    </p></center>
+                </div>
+                <div class="col-md-3 text-center">
+                  <center>
+                    <img src="{{ url_for('static', filename='images/healthcare-fraud.jpg') }}" class="img-fluid rounded mb-3 img-height" alt="Model Training">
+                    <h5 class="mb-2"><b>Healthcare</b></h5></center>
+                    <p>Detection of fraudulent insurance claims, such as billing for services not rendered or unnecessary medical procedures.
+Monitoring prescription patterns to identify doctor shopping or drug diversion.
+Prevention of identity theft for medical services.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                  <center>
+                    <img src="{{ url_for('static', filename='images/ecommerce-fraud.jpg') }}" class="img-fluid rounded mb-3 img-height" alt="Prediction">
+                    <h5 class="mb-2"><b>E-commerce</b></h5></center>
+                    <p>Detection of fraudulent orders, including stolen credit card information or fake identities.
+Monitoring of user behavior to identify suspicious activities, such as account takeover or fake reviews.
+Prevention of refund fraud and chargeback abuse.
+</p>
+                </div>
+                <div class="col-md-3 text-center">
+                  <center>
+                    <img src="{{ url_for('static', filename='images/telecommunication-fraud.jpg') }}" class="img-fluid rounded mb-3 img-height" alt="Prediction">
+                    <h5 class="mb-2"><b>Telecommunications</b></h5></center>
+                    <p>Identification of subscription fraud, where individuals use false identities to obtain services.
+Detection of call detail record (CDR) manipulation to inflate usage or evade billing.
+Monitoring of roaming patterns to identify SIM card cloning or fraudulent usage.
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- Our Values -->
+    <section class="container my-5">
+        <h1 class="text-center mb-4"><b>Why is fraud detection important ?</b></h1>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <h5 class="mb-2"><b>Financial Protection</b></h5>
+                <p>Fraud detection helps companies safeguard their financial assets by identifying and 
+                  preventing fraudulent activities that could result in significant monetary losses.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="mb-2"><b>Maintaining customer trust</b></h5>
+                <p>Effective fraud detection measures contribute to maintaining positive customer relationships by demonstrating a commitment to
+                   security and protecting customers from potential financial harm.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="mb-2"><b>Legal compliance</b></h5>
+                <p>Compliance with regulatory requirements and legislation regarding fraud prevention is essential for avoiding 
+                  penalties, fines, and legal liabilities.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="mb-2"><b>Preventing financial crime</b></h5>
+                <p>By detecting and deterring fraudulent activities, companies contribute to the broader efforts to combat financial crime, 
+                  including money laundering and terrorist financing.</p>
+            </div>
+        </div>
+    </section>
+
+   
+    {% endblock %}

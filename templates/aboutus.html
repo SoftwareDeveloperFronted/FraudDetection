@@ -1,0 +1,92 @@
+{% extends 'base.html'%}
+{% block title %}About Us - Fraud Detection{% endblock %}
+{% block x %}
+
+<!-- Hero Section -->
+    <section class="mb-4 text-center">
+        <div class="container">
+            <h1 class="display-8 mb-2"> <b>How fraud detection works</b></h1>
+            <p>Fraud detection is a multi-stage process that involves comprehensive analysis and sophisticated techniques to 
+            identify and mitigate fraudulent activities effectively. Each stage of the process plays a crucial role in 
+            uncovering anomalies and patterns indicative of fraudulent behavior. Let’s delve into the intricacies of this 
+            process, exploring each part and its corresponding steps:</p>
+        </div>
+    </section>
+    <!-- Mission & Vision -->
+    <section class="container w-full">
+        <div class="row" style="margin-bottom: 3px;">
+            <div class="col-md-8">
+                <h2 class="mb-2"><b> Analyze Data</b></h2>
+                <p>
+                   This initial stage involves the analysis of vast datasets containing transaction records, customer behaviors,
+                    and other relevant data sources. Through advanced analytics, potential fraud indicators are identified and 
+                    flagged for further investigation.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/analysis-data.jpg') }}" class="img-fluid mb-3" alt="Team Member">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 3px;">
+            
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/identify-relationship.jpg') }}" class="img-fluid mb-3" alt="Team Member">
+            </div>
+            <div class="col-md-8">
+                <h2 class="mb-2"><b>Identify Relationships</b></h2>
+                <p>
+                    In this stage, algorithms are employed to establish associations and correlations within the data. By 
+                    identifying relationships between variables, such as transaction amounts, frequencies, and customer 
+                    demographics, potential fraud patterns are uncovered.
+                </p>
+            </div>
+            
+        </div>
+        <div class="row" style="margin-bottom: 3px;">
+            <div class="col-md-8">
+                <h2 class="mb-2"><b> Customer Approval Patterns</b></h2>
+                <p>
+                  During this phase, sophisticated algorithms analyze customer approval patterns, distinguishing between 
+                  legitimate and fraudulent transactions. By scrutinizing approval trends and deviations, suspicious activities 
+                  are pinpointed for closer examination.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/customer.jpg') }}" class="img-fluid mb-3" alt="Team Member">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 3px;">
+            
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/post-fail.png') }}" class="img-fluid mb-3" alt="Team Member">
+            </div>
+            <div class="col-md-8">
+                <h2 class="mb-2"><b>Post Failure</b></h2>
+                <p>
+                    Following the detection of potential fraud indicators, customer authentication processes are initiated. 
+                    Post-failure analysis involves verifying customer identities and scrutinizing transaction details to confirm 
+                    legitimacy or identify fraudulent behavior.
+                </p>
+            </div>
+            
+        </div>
+        <div class="row" style="margin-bottom: 3px;">
+            <div class="col-md-8">
+                <h2 class="mb-2"><b> Create Alert</b></h2>
+                <p>
+                  In the final stage, alerts are generated to notify relevant stakeholders of potential fraud instances. These 
+                  alerts prompt further investigation and action, facilitating timely intervention to prevent financial losses 
+                  and mitigate risks associated with fraudulent activities.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='images/alert.jpg') }}" class="img-fluid mb-3" alt="Team Member">
+            </div>
+        </div>
+    </section>
+
+   
+
+
+
+   {% endblock %}

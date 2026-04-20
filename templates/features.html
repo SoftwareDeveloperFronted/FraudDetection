@@ -1,0 +1,145 @@
+{% extends 'base.html'%}
+{% block title %}Features -Fraud Detection{% endblock %}
+{% block x %}
+    <!-- Hero Section -->
+    <section class="py-5 text-center bg-light">
+        <div class="container">
+            <h1 class="display-8"><b>Fraud Detection Systems</b></h1>
+            <p class="lead mt-3">Fraud detection systems employ real-time monitoring, AI/machine learning, and behavioral 
+                analytics to identify suspicious patterns instantly. </p>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <div class="container my-4">
+        <h2 class="text-center mb-4"><b>Key Features of Fraud Detection Systems</b></h2>
+        <div class="row g-5">
+
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/real-time.jpg') }}" class="img-fluid rounded shadow" alt="Fast Processing">
+            </div>
+
+            <div class="col-md-6">
+                <h3><b>Real-time transaction monitoring</b></h3>
+                <p> It is an automated compliance and security process that analyzes financial transactions within milliseconds as
+                     they occur. It instantly detects fraud, money laundering, and regulatory violations before they complete, 
+                     allowing organizations to block suspicious activity immediately. </p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/ai-ml.jpg') }}" class="img-fluid rounded shadow" alt="Accurate Risk Analysis">
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <h3><b>AI and Machine Learning (AI/ML) in fraud detection</b></h3>
+                <p> It enable real-time, automated identification of fraudulent activities by analyzing vast datasets and user 
+                    behavior patterns faster than manual review. These systems use algorithms to learn normal behavior, identify
+                     anomalies, and reduce false positives. Key applications include detecting credit card fraud, identity theft,
+                      and money laundering across industries.</p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/bahaviour.jpg') }}" class="img-fluid rounded shadow" alt="User Friendly Interface">
+            </div>
+
+            <div class="col-md-6">
+                <h3><b>Behavioral biometrics</b></h3>
+                <p>Behavioral biometrics in fraud detection is a passive, AI-driven technology that analyzes unique user 
+                    interaction patterns—such as typing rhythm, mouse movements, and device handling—to authenticate users 
+                    continuously. Unlike static, one-time authentication (passwords), this method creates a unique behavioral 
+                    profile for each user, allowing systems to detect anomalies in real-time, such as account takeovers or bot
+                     activity. </p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/device.jpg') }}" class="img-fluid rounded shadow" alt="Comprehensive Reporting">
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <h3><b>Device fingerprinting </b></h3>
+                <p>Device fingerprinting is a critical fraud detection technology that collects hardware and software data—such 
+                    as IP address, operating system, browser, and screen resolution—to generate a unique ID (device hash) for 
+                    identifying, tracking, and blocking malicious users, even if they switch accounts or use VPNs. This passive 
+                    identification technique operates in real-time, allowing firms to detect anomalies like multiple accounts on
+                     one device or unusual location changes.</p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/idetity-verification.jpg') }}" class="img-fluid rounded shadow" alt="Secure Data Handling">
+            </div>
+
+            <div class="col-md-6">
+                <h3><b>Identity verification</b></h3>
+                <p>Identity verification confirms a user's true identity during onboarding, while authentication proves it is 
+                    the same person accessing an account later. These processes, crucial for fraud prevention, KYC/AML
+                     compliance, and security, utilize methods like biometric scanning, government ID checks, and multi-factor 
+                     authentication (MFA) to distinguish legitimate users from fraudsters.</p>
+            </div>
+
+        </div>
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/risk.jpg') }}" class="img-fluid rounded shadow" alt="Fast Processing">
+            </div>
+
+            <div class="col-md-6">
+                <h3><b>Risk scoring</b></h3>
+                <p>Risk scoring in fraud detection is an automated, AI-driven process that assigns a numerical value—often 
+                    between 0 and 99—to transactions or user behavior to indicate the probability of fraud. It acts as a 
+                    real-time "early warning system," analyzing data points like IP address, behavioral biometrics, and velocity
+                     to instantly approve, flag, or block transactions.</p>
+            </div>
+
+        </div>
+
+        <hr class="my-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/credential.jpg') }}" class="img-fluid rounded shadow" alt="Accurate Risk Analysis">
+            </div>
+
+            <div class="col-md-6 order-md-1">
+                <h3><b>Credential Intelligence</b></h3>
+            <p>Credential Intelligence is a proactive fraud detection feature that continuously monitors the internet—including 
+                the dark web, data breaches, and paste sites—to identify compromised usernames, passwords, and authentication 
+                data before they are used in attacks. It acts as an early warning system, allowing organizations to act against 
+                credential stuffing and account takeovers (ATO) by knowing if credentials are valid and already circulating 
+                among threat actors. 
+</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    {% endblock %}

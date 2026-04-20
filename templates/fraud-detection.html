@@ -1,0 +1,116 @@
+{% extends 'base.html'%}
+{% block title %}Fraud - Detection{% endblock %}
+{% block x %}
+
+<div class="container">
+	<div class="row justify-content-center py-5">
+        <div class="col-md-8">
+			<center>
+				<h2 class="fraud" style="font-size: 30px; margin-bottom: 20px;">UPI Fraud Detection System</h2>
+			</center>
+
+            <form method="POST" class="shadow p-4 bg-light rounded">
+                
+                <div class="mb-3">
+                    <label> Transaction Type </label>
+					<select id="type" class="form-control">
+						<option value="PAYMENT">PAYMENT</option>
+						<option value="TRANSFER">TRANSFER</option>
+					</select>
+                </div>
+
+                <div class="mb-3">
+                    <label> Amount</label>
+					<input type="number" class="form-control" id="amount" placeholder="Enter transaction amount" />
+                </div>
+
+                <div class="mb-3">
+                    <label> Sender Old Balance</label>
+					<input type="number" class="form-control" id="oldbalanceOrg" placeholder="Old balance (origin)" />
+                </div>
+
+                <div class="mb-3">
+                    <label> Sender New Balance</label>
+					<input type="number" class="form-control" id="newbalanceOrig" placeholder="New balance (origin)" />
+                </div>
+
+				<div class="mb-3">
+                    <label> Receiver Old Balance</label>
+					<input type="number" id="oldbalanceDest" class="form-control" placeholder="Old balance (destination)" />
+                </div>
+
+                <div class="mb-3">
+                    <label> Receiver New Balance</label>
+					<input type="number" class="form-control" id="newbalanceDest" placeholder="New balance (destination)" />
+                </div>
+
+				<!-- IMPORTANT FIX -->
+				<button type="button" onclick="predictFraud()" class="btn btn-primary w-100">Check Fraud</button>
+
+            </form>
+        
+    
+
+<!-- RESULT BOX -->
+
+ <div style="background-color: antiquewhite; margin-top: 10px;" class="shadow p-4 rounded">
+			<center >
+				<div id="result" class="result-box" style="display:none;" class="shadow p-4 bg-pink rounded"></div>
+				
+			</center></div>
+
+		</div>
+	</div>
+</div>
+<div class="footer"> @ 2026 Fraud Detection Engine</div>
+
+<script>
+async function predictFraud() {
+
+	const payload = {
+		type: document.getElementById("type").value,
+		amount: document.getElementById("amount").value,
+		oldbalanceOrg: document.getElementById("oldbalanceOrg").value,
+		newbalanceOrig: document.getElementById("newbalanceOrig").value,
+		oldbalanceDest: document.getElementById("oldbalanceDest").value,
+		newbalanceDest: document.getElementById("newbalanceDest").value,
+	};
+
+	const resultBox = document.getElementById("result");
+	resultBox.style.display = "none";
+
+	try {
+		const res = await fetch("http://localhost:5000/predict", {
+			method: "POST",
+			headers: {"Content-Type": "application/json"},
+			body: JSON.stringify(payload)
+		});
+
+		const data = await res.json();
+
+		if (data.error) {
+			resultBox.className = "result-box";
+			resultBox.style.display = "block";
+			resultBox.innerHTML = `<strong>Error:</strong> ${data.error}`;
+			return;
+		}
+
+		const status = data.is_fraud === 1 ? "FRAUD DETECTED" : "SAFE TRANSACTION";
+		const prob = (data.probability * 100).toFixed(2);
+
+		resultBox.style.display = "block";
+		resultBox.className = data.is_fraud === 1 ? "result-box fraud" : "result-box safe";
+
+		resultBox.innerHTML = `
+			<div>${status}</div>
+			<div><strong>Fraud Probability:</strong> ${prob}%</div>
+		`;
+
+	} catch (err) {
+		resultBox.style.display = "block";
+		resultBox.className = "result-box";
+		resultBox.innerHTML = `<strong>Error:</strong> ${err.message}`;
+	}
+}
+</script>
+{% endblock%}
